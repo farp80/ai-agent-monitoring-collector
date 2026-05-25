@@ -1,0 +1,14 @@
+---
+description: OOP architecture and extension rules for the machine collector
+alwaysApply: true
+---
+
+# Machine collector conventions
+
+- Use **single responsibility**: one class per concern (detect OS, collect one metric, write JSON, schedule).
+- **ICollector** enriches `MachineSnapshot`; **IPlatformProvider** reads OS APIs only.
+- New metrics = new collector class + provider method(s) on all platforms (windows, linux, darwin, chromeos).
+- Register collectors in `collector/collectors/registry.py` → `build_default_registry()`.
+- Stdlib only unless the user approves new dependencies.
+- No virtualenv; no tests unless requested.
+- See `CURSOR.md` for full architecture.

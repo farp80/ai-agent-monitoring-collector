@@ -1,0 +1,8 @@
+{
+  "collection_interval_minutes": 15,
+  "output_directory": "data",
+  "enabled_collectors": null,
+  "public_ip_lookup_url": "https://api.ipify.org?format=json",
+  "public_ip_timeout_seconds": 5,
+  "run_once": false
+}
